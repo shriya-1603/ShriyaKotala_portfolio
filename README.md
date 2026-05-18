@@ -1,7 +1,5 @@
 # Shriya Kotala | Personal Portfolio
 
-![Live Status](https://img.shields.io/badge/Status-Live-brightgreen)
-![Tech Stack](https://img.shields.io/badge/Tech-Next.js%20%7C%20React%20%7C%20CSS-blue)
 
 A highly interactive, Spider-Verse inspired personal portfolio showcasing my journey and projects across Software Development and AI/Machine Learning Engineering.
 
@@ -55,5 +53,5 @@ pnpm run dev
 
 ## Connect
 
-- LinkedIn: [Shriya Kotala](https://linkedin.com/in/shriya-kotala)
+- LinkedIn: [Shriya Kotala]([https://linkedin.com/in/shriya-kotala](https://www.linkedin.com/in/shriya-kotala-4a2655243/))
 - GitHub: [@shriya-1603](https://github.com/shriya-1603)
