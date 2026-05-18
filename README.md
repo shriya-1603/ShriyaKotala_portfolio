@@ -53,5 +53,5 @@ pnpm run dev
 
 ## Connect
 
-- LinkedIn: [Shriya Kotala](https://linkedin.com/in/shriya-kotala](https://www.linkedin.com/in/shriya-kotala-4a2655243/)
+- LinkedIn: [Shriya Kotala](https://www.linkedin.com/in/shriya-kotala-4a2655243/)
 - GitHub: [@shriya-1603](https://github.com/shriya-1603)
