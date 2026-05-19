@@ -743,18 +743,142 @@ body {
 
 .name-animate { animation: wipe-in 1s cubic-bezier(0.77,0,0.175,1) forwards; }
 .name-animate-2 { animation: wipe-in 1s cubic-bezier(0.77,0,0.175,1) 0.3s forwards; clip-path:inset(0 100% 0 0); }
+
+/* HERO QUICK FACTS */
+.hero-quick-facts {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
+}
+.hero-quick-facts span {
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800;
+  background: var(--yellow); color: var(--ink);
+  padding: 4px 12px; border-radius: 3px;
+  border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink);
+}
+[data-theme="dark"] .hero-quick-facts span {
+  background: rgba(124,58,237,0.3); color: var(--coral); border-color: var(--coral);
+  box-shadow: 2px 2px 0 var(--coral);
+}
+
+/* SKILL TAG CLOUD */
+.skill-categories-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; margin-top: 48px;
+}
+@media(max-width:768px){ .skill-categories-grid { grid-template-columns: 1fr; } }
+.skill-category-panel {
+  background: var(--panel-bg); border: 2.5px solid var(--ink);
+  padding: 20px 22px; border-radius: 4px;
+  box-shadow: var(--panel-shadow); backdrop-filter: blur(5px);
+}
+.skill-tag-cloud {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+}
+.skill-tag {
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px;
+  padding: 5px 13px; border: 2px solid var(--ink); border-radius: 20px;
+  background: var(--cream); color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: all 0.2s var(--cb-pop); cursor: default;
+}
+.skill-tag:hover {
+  background: var(--ink); color: var(--cream);
+  transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--coral);
+}
+[data-theme="dark"] .skill-tag {
+  background: rgba(255,255,255,0.05); color: var(--ink);
+}
+[data-theme="dark"] .skill-tag:hover {
+  background: var(--coral); color: #000;
+}
+
+/* ARCHITECTURE PANEL */
+.project-card-actions {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;
+}
+.project-arch-btn {
+  background: var(--teal); color: var(--ink);
+  cursor: none;
+}
+[data-theme="dark"] .project-arch-btn { color: #000; }
+.arch-panel {
+  margin-top: 16px; border-top: 2px dashed var(--ink); padding-top: 14px;
+  animation: wipe-in 0.3s ease forwards;
+}
+.arch-title {
+  font-family: 'Bangers', cursive; font-size: 14px;
+  color: var(--coral); margin-bottom: 8px; letter-spacing: 1px;
+}
+.arch-flow {
+  font-family: 'Nunito', monospace; font-size: 11px; line-height: 1.8;
+  color: var(--ink); white-space: pre-wrap; word-break: break-word;
+  background: rgba(0,0,0,0.04); border-radius: 4px;
+  padding: 10px 14px; border: 1.5px solid rgba(0,0,0,0.1);
+}
+[data-theme="dark"] .arch-flow {
+  background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);
+}
+
+/* CURRENTLY BUILDING */
+#currently-building {
+  padding: 70px 60px; background: var(--ink);
+  border-top: 3px solid var(--yellow);
+}
+#currently-building .section-title { color: var(--yellow); }
+#currently-building .section-title::after { background: var(--coral); }
+.building-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 22px; margin-top: 36px;
+}
+@media(max-width:768px){ .building-grid { grid-template-columns: 1fr; } }
+.building-item {
+  background: rgba(255,255,255,0.05); border: 2.5px solid var(--yellow);
+  border-radius: 4px; padding: 22px;
+  box-shadow: 4px 4px 0 var(--coral);
+  transition: all 0.25s var(--cb-pop);
+}
+.building-item:hover {
+  transform: translate(-4px,-4px); box-shadow: 8px 8px 0 var(--coral);
+}
+.building-item-icon { font-size: 26px; margin-bottom: 10px; }
+.building-item-title {
+  font-family: 'Bangers', cursive; font-size: 18px;
+  color: var(--yellow); letter-spacing: 1px; margin-bottom: 6px;
+}
+.building-item-desc {
+  font-family: 'Nunito', sans-serif; font-size: 13px;
+  color: rgba(255,255,255,0.72); line-height: 1.5;
+}
+
+/* CONTACT AVAILABILITY */
+.contact-availability {
+  font-family: 'Permanent Marker', cursive; font-size: 16px;
+  color: var(--teal); text-align: center;
+  margin: 28px auto 0; padding: 14px 28px; max-width: 600px;
+  border: 2px dashed var(--teal); border-radius: 8px;
+}
 `;
 
-const skills = [
-  { name: "ML & Deep Learning", details: "PyTorch, TensorFlow, Keras, YOLOv8, OpenCV", pct: 95, cat: "AI/ML" },
-  { name: "NLP & LLMs", details: "BERT, Transformers, RAG, LangChain, FAISS", pct: 94, cat: "AI/ML" },
-  { name: "Agentic AI", details: "AI Agents, Workflows, Oracle Fusion AI", pct: 90, cat: "AI/ML" },
-  { name: "ML Concepts", details: "Transfer Learning, Embeddings, Feature Eng.", pct: 92, cat: "AI/ML" },
-  { name: "Languages", details: "Python, C++, C#, Java, TypeScript", pct: 95, cat: "Engineering" },
-  { name: "Full-Stack Web", details: "React, Angular, Node.js, Flask, Tailwind", pct: 92, cat: "Engineering" },
-  { name: "Databases & Vector Stores", details: "Snowflake, MongoDB, SQL, FAISS", pct: 90, cat: "Engineering" },
-  { name: "Cloud & DevOps", details: "AWS, Azure DevOps, Docker, CI/CD", pct: 88, cat: "Engineering" },
-  { name: "Security & Networks", details: "IDS, TLS Analysis, Threat Detection", pct: 85, cat: "Engineering" },
+const skillCategories = [
+  {
+    title: "AI/ML", emoji: "🧠",
+    tags: ["PyTorch", "TensorFlow", "Keras", "OpenCV", "YOLOv8", "Scikit-learn", "ResNet", "U-Net", "CBAM"]
+  },
+  {
+    title: "LLMs & Agentic AI", emoji: "🤖",
+    tags: ["LangChain", "LangGraph", "LangSmith", "RAG", "FAISS", "BERT", "Transformers", "Llama 3", "Ollama"]
+  },
+  {
+    title: "Engineering", emoji: "⚙️",
+    tags: ["Python", "C++", "Java", "TypeScript", "Flask", "React", "Angular", "Node.js", "FastAPI"]
+  },
+  {
+    title: "Cloud & DevOps", emoji: "☁️",
+    tags: ["AWS", "Azure DevOps", "Docker", "CI/CD", "Snowflake", "MongoDB", "SQL"]
+  },
+  {
+    title: "Security & Networks", emoji: "🔒",
+    tags: ["IDS", "TLS Analysis", "Threat Detection", "Network Security"]
+  }
 ];
 
 const projects = [
@@ -763,14 +887,23 @@ const projects = [
     tags: ["PyTorch", "CBAM U-Net", "Deep Ensembles", "Medical AI"],
     description: "MS Capstone deep learning pipeline synthesizing CT from MRI for radiotherapy. CBAM U-Net achieved 51.4 HU MAE with actionable uncertainty maps (ρ=0.7886).",
     metric: "51.4 HU MAE", status: "RESEARCH", statusColor: "#ff6b6b",
-    link: "https://github.com/shriya-1603/uncertainty-aware-mri-ct-synthesis"
+    link: "https://github.com/shriya-1603/uncertainty-aware-mri-ct-synthesis",
+    architecture: `MRI Input → Preprocessing → CBAM U-Net → CT Synthesis
+                                      ↓
+             MC Dropout / Deep Ensembles / TTA
+                                      ↓
+             Uncertainty Map + SPR/WET Clinical Validation`
   },
   {
-    id: "02", title: "RAG-Based Document Q&A",
+    id: "02", title: "Production RAG Q&A System",
     tags: ["Llama 3", "LangChain", "FAISS", "Docker"],
-    description: "Production-grade RAG system with semantic chunking and source citation. Supports PDF/DOCX uploads with persistent FAISS vector storage.",
+    description: "End-to-end RAG pipeline with semantic chunking, persistent FAISS vector storage, and source citation. Supports PDF/DOCX uploads with local Llama 3 inference via Ollama.",
     metric: "Local Llama 3", status: "PRODUCTION", statusColor: "#4ecdc4",
-    link: "https://github.com/shriya-1603/rag-qa-system"
+    link: "https://github.com/shriya-1603/rag-qa-system",
+    architecture: `PDF/DOCX Upload → Semantic Chunking → FAISS Index
+User Query → LangChain Retriever → Llama 3 (Ollama)
+                         ↓
+           Response + Source Citations`
   },
   {
     id: "03", title: "Satellite to Map Translation (cGAN)",
@@ -794,9 +927,9 @@ const projects = [
     link: "https://github.com/shriya-1603/Deep-Learning-Based-Pneumonia-Detection-A-Study-of-Custom-CNN-VGG16-and-ResNet50V2"
   },
   {
-    id: "06", title: "Multi-Module CV Web App",
+    id: "06", title: "Production CV Platform (8 Modules)",
     tags: ["MediaPipe", "SAM", "Flask", "Docker"],
-    description: "Containerized platform consolidating 8 independent CV pipelines including SAM segmentation, pose tracking, and face authentication.",
+    description: "Containerized REST API platform routing across 8 independent CV pipelines — SAM segmentation, pose tracking, face authentication — with Docker and real-time monitoring.",
     metric: "8 CV Modules", status: "PRODUCTION", statusColor: "#4ecdc4",
     link: "https://github.com/shriya-1603/CV_consolidated"
   }
@@ -1125,7 +1258,12 @@ function HeroSection({ scrollToSection }) {
           <span className="name-animate-2" style={{display:"block",color:"var(--coral)"}}>KOTALA</span>
         </h1>
         <p className="hero-sub reveal" style={{transitionDelay:"0.5s"}}>
-          Engineer by training. Problem-solver by nature. Builder by choice.
+          AI/ML Engineer building Agentic AI systems, LLM workflows, and production-ready ML applications.
+          <span className="hero-quick-facts">
+            <span>🎓 MS CS @ Georgia State (3.99 GPA)</span>
+            <span>💼 Former Micron Software Engineering Intern</span>
+            <span>🚀 Open to AI/ML &amp; SWE Roles</span>
+          </span>
         </p>
         <div className="hero-actions reveal" style={{transitionDelay:"0.6s"}}>
           <button className="btn btn-primary" onClick={()=>scrollToSection("projects")}>VIEW MISSION →</button>
@@ -1178,21 +1316,21 @@ function AboutSection() {
         </div>
         <div>
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.1s"}}>
-            <div className="panel-num">[01] THE INTERSECTION</div>
+            <div className="panel-num">[01] THE ENGINEER</div>
             <p style={{lineHeight:1.7,fontSize:14}}>
-              I am a graduate student from Georgia State University with a Master's in Computer Science, building at the intersection of Artificial Intelligence and Software Engineering. Whether it's optimizing complex machine learning algorithms or architecting scalable backend systems, I bridge the gap between intelligent research and robust, production-ready applications.
+              AI/ML engineer with experience building production-ready ML systems, evaluation pipelines, and scalable software solutions. I work at the intersection of Artificial Intelligence and Software Engineering — bridging research-grade models with robust, production-ready applications. Pursuing MS Computer Science at Georgia State University (3.99 GPA).
             </p>
           </div>
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.2s"}}>
             <div className="panel-num">[02] PRODUCTION-READY</div>
             <p style={{lineHeight:1.7,fontSize:14}}>
-              With experience at Micron Technology and various academic/personal projects, I have engineered real-time analysis modules and large-scale data pipelines. I specialize in building end-to-end systems that are not just technically advanced, but genuinely reliable, maintainable, and scalable in real-world environments.
+              As a Software Engineering Intern at Micron Technology, I engineered real-time analysis modules and large-scale data pipelines used in production environments. I specialize in end-to-end systems that are not just technically advanced, but genuinely reliable, maintainable, and scalable in real-world settings.
             </p>
           </div>
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.3s"}}>
             <div className="panel-num">[03] THE BUILDER</div>
             <p style={{lineHeight:1.7,fontSize:14}}>
-              From developing full-stack consumer applications to deploying production-grade AI models and security-focused data pipelines, I am a problem-solver by nature. I thrive on building efficient, secure, and user-centric software that solves complex digital challenges.
+              From agentic LLM pipelines and medical imaging systems to containerized CV platforms and full-stack applications — I build systems that ship. A natural problem-solver who thrives when cutting-edge research meets real-world engineering constraints.
             </p>
           </div>
         </div>
@@ -1201,52 +1339,26 @@ function AboutSection() {
   );
 }
 
-function SkillsSection({ skillsVisible }) {
-  const aiSkills = skills.filter(s=>s.cat==="AI/ML");
-  const engSkills = skills.filter(s=>s.cat==="Engineering");
+function SkillsSection() {
   return (
     <section id="skills">
       <div style={{textAlign:"center"}}>
         <h2 className="section-title">POWER LEVELS</h2>
         <p className="section-subtitle reveal" style={{transitionDelay:"0.1s"}}>Skills &amp; Technologies</p>
       </div>
-      <div className="skills-grid">
-        <div>
-          <div className="skill-cat-title reveal-left">AI/ML</div>
-          {aiSkills.map((s,i)=>(
-            <div key={s.name} className="skill-row" style={{transitionDelay:`${0.1+i*0.1}s`}}>
-              <div className="skill-label-row" style={{alignItems:'flex-start'}}>
-                <span style={{display:'flex',flexDirection:'column'}}>
-                  <span>{s.name}</span>
-                  <span style={{fontSize:'0.8rem',color:'var(--text-muted)',fontFamily:"'Nunito', sans-serif",marginTop:'4px',lineHeight:'1.2'}}>{s.details}</span>
-                </span>
-                <span>{s.pct}%</span>
-              </div>
-              <div className="skill-track">
-                <div className="skill-fill" style={{width:skillsVisible?`${s.pct}%`:"0%",transitionDelay:`${0.3+i*0.15}s`}}/>
-              </div>
+      <div className="skill-categories-grid">
+        {skillCategories.map((cat, ci) => (
+          <div key={cat.title} className="skill-category-panel reveal" style={{transitionDelay:`${0.1+ci*0.1}s`}}>
+            <div className="skill-cat-title">{cat.emoji} {cat.title}</div>
+            <div className="skill-tag-cloud">
+              {cat.tags.map(tag => (
+                <span key={tag} className="skill-tag">{tag}</span>
+              ))}
             </div>
-          ))}
-        </div>
-        <div>
-          <div className="skill-cat-title reveal-right">Engineering</div>
-          {engSkills.map((s,i)=>(
-            <div key={s.name} className="skill-row" style={{transitionDelay:`${0.1+i*0.1}s`}}>
-              <div className="skill-label-row" style={{alignItems:'flex-start'}}>
-                <span style={{display:'flex',flexDirection:'column'}}>
-                  <span>{s.name}</span>
-                  <span style={{fontSize:'0.8rem',color:'var(--text-muted)',fontFamily:"'Nunito', sans-serif",marginTop:'4px',lineHeight:'1.2'}}>{s.details}</span>
-                </span>
-                <span>{s.pct}%</span>
-              </div>
-              <div className="skill-track">
-                <div className="skill-fill" style={{width:skillsVisible?`${s.pct}%`:"0%",transitionDelay:`${0.3+i*0.15}s`}}/>
-              </div>
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-      <div className="badge-cloud reveal" style={{transitionDelay:"0.3s",justifyContent:"center"}}>
+      <div className="badge-cloud reveal" style={{transitionDelay:"0.5s",justifyContent:"center"}}>
         {badges.map((b,i)=>(
           <span key={b.t} className="badge" style={{background:b.bg,transitionDelay:`${0.4+i*0.05}s`}}>{b.t}</span>
         ))}
@@ -1258,6 +1370,7 @@ function SkillsSection({ skillsVisible }) {
 function ProjectCard({ p, i }) {
   const cardRef = useRef(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [showArch, setShowArch] = useState(false);
 
   const onMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -1289,7 +1402,23 @@ function ProjectCard({ p, i }) {
       <p className="project-desc">{p.description}</p>
       <div className="project-metric">STAT: {p.metric}</div>
       <div className="project-tags">{p.tags.map(t=><span key={t} className="project-tag">{t}</span>)}</div>
-      <a className="project-link" href={p.link} target="_blank" rel="noreferrer">VIEW ON GITHUB →</a>
+      <div className="project-card-actions">
+        <a className="project-link" href={p.link} target="_blank" rel="noreferrer">VIEW ON GITHUB →</a>
+        {p.architecture && (
+          <button
+            className="project-link project-arch-btn"
+            onClick={(e) => { e.stopPropagation(); setShowArch(s => !s); }}
+          >
+            {showArch ? 'CLOSE ↑' : 'ARCHITECTURE →'}
+          </button>
+        )}
+      </div>
+      {p.architecture && showArch && (
+        <div className="arch-panel">
+          <div className="arch-title">⚡ SYSTEM ARCHITECTURE</div>
+          <pre className="arch-flow">{p.architecture}</pre>
+        </div>
+      )}
     </div>
   );
 }
@@ -1309,6 +1438,7 @@ function ProjectsSection() {
     </section>
   );
 }
+
 
 function ContactSection({ formData, setFormData, handleSend }) {
   return (
@@ -1333,6 +1463,9 @@ function ContactSection({ formData, setFormData, handleSend }) {
       </div>
       <div style={{textAlign:"center",marginTop:20,fontFamily:"'Permanent Marker', cursive",color:"var(--yellow)"}} className="reveal">
         📍 ATLANTA, GEORGIA
+      </div>
+      <div className="contact-availability reveal" style={{transitionDelay:"0.2s"}}>
+        📍 Currently seeking AI/ML Engineer, AI Engineer, and SWE opportunities
       </div>
       <div className="contact-form reveal" style={{transitionDelay:"0.3s"}}>
         <div className="form-row">
@@ -1671,7 +1804,7 @@ export default function Portfolio() {
       {/* Sections */}
       <HeroSection scrollToSection={scrollToSection}/>
       <AboutSection/>
-      <SkillsSection skillsVisible={skillsVisible}/>
+      <SkillsSection/>
       <ProjectsSection/>
       <ContactSection formData={formData} setFormData={setFormData} handleSend={handleSend}/>
       
