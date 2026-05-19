@@ -929,7 +929,7 @@ User Query → LangChain Retriever → Llama 3 (Ollama)
   {
     id: "06", title: "Production CV Platform (8 Modules)",
     tags: ["MediaPipe", "SAM", "Flask", "Docker"],
-    description: "Containerized REST API platform routing across 8 independent CV pipelines — SAM segmentation, pose tracking, face authentication — with Docker and real-time monitoring.",
+    description: "Containerized REST API platform routing across 8 independent CV pipelines: SAM segmentation, pose tracking, and face authentication, with Docker and real-time monitoring.",
     metric: "8 CV Modules", status: "PRODUCTION", statusColor: "#4ecdc4",
     link: "https://github.com/shriya-1603/CV_consolidated"
   }
@@ -1318,7 +1318,7 @@ function AboutSection() {
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.1s"}}>
             <div className="panel-num">[01] THE ENGINEER</div>
             <p style={{lineHeight:1.7,fontSize:14}}>
-              AI/ML engineer with experience building production-ready ML systems, evaluation pipelines, and scalable software solutions. I work at the intersection of Artificial Intelligence and Software Engineering — bridging research-grade models with robust, production-ready applications. Pursuing MS Computer Science at Georgia State University (3.99 GPA).
+              AI/ML engineer with experience building production-ready ML systems, evaluation pipelines, and scalable software solutions. I work at the intersection of Artificial Intelligence and Software Engineering, bridging research-grade models with robust, production-ready applications. Pursuing MS Computer Science at Georgia State University (3.99 GPA).
             </p>
           </div>
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.2s"}}>
@@ -1330,7 +1330,7 @@ function AboutSection() {
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.3s"}}>
             <div className="panel-num">[03] THE BUILDER</div>
             <p style={{lineHeight:1.7,fontSize:14}}>
-              From agentic LLM pipelines and medical imaging systems to containerized CV platforms and full-stack applications — I build systems that ship. A natural problem-solver who thrives when cutting-edge research meets real-world engineering constraints.
+              From agentic LLM pipelines and medical imaging systems to containerized CV platforms and full-stack applications, I build systems that ship. A natural problem-solver who thrives when cutting-edge research meets real-world engineering constraints.
             </p>
           </div>
         </div>
