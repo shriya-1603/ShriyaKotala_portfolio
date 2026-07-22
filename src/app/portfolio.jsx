@@ -488,7 +488,7 @@ body {
 }
 .footer-text {
   font-family: 'Permanent Marker', cursive;
-  font-size: 15px; color: #1a1a2e;
+  font-size: 15px; color: var(--cream);
   font-weight: bold;
   text-align: center; margin-top: 60px;
 }
@@ -860,78 +860,75 @@ body {
 
 const skillCategories = [
   {
-    title: "AI/ML", emoji: "🧠",
-    tags: ["PyTorch", "TensorFlow", "Keras", "OpenCV", "YOLOv8", "Scikit-learn", "ResNet", "U-Net", "CBAM"]
+    title: "AI / ML & Agentic AI", emoji: "🧠",
+    tags: ["PyTorch", "LangChain", "FAISS", "BERT", "Ollama", "LLM Integration", "RAG Pipelines", "OpenCV", "CBAM", "U-Net"]
   },
   {
-    title: "LLMs & Agentic AI", emoji: "🤖",
-    tags: ["LangChain", "LangGraph", "LangSmith", "RAG", "FAISS", "BERT", "Transformers", "Llama 3", "Ollama"]
+    title: "Backend & APIs", emoji: "⚙️",
+    tags: ["Python", "Java", "TypeScript", "JavaScript", "C#", "C++", "SQL", "FastAPI", "Flask", "Node.js", "ASP.NET", "REST API Design", "Webhooks", "High Throughput Ingestion"]
   },
   {
-    title: "Engineering", emoji: "⚙️",
-    tags: ["Python", "C++", "Java", "TypeScript", "Flask", "React", "Angular", "Node.js", "FastAPI"]
+    title: "Databases", emoji: "💾",
+    tags: ["PostgreSQL", "MongoDB", "DynamoDB", "Snowflake", "Neo4j", "Query Optimization", "Schema Design", "Data Modeling"]
   },
   {
-    title: "Cloud & DevOps", emoji: "☁️",
-    tags: ["AWS", "Azure DevOps", "Docker", "CI/CD", "Snowflake", "MongoDB", "SQL"]
+    title: "Cloud & Infrastructure", emoji: "☁️",
+    tags: ["AWS (S3, Lambda, DynamoDB, EC2)", "Docker", "Kubernetes", "CI/CD", "Git", "Distributed Orchestration", "Azure DevOps"]
   },
   {
-    title: "Security & Networks", emoji: "🔒",
-    tags: ["IDS", "TLS Analysis", "Threat Detection", "Network Security"]
+    title: "Fundamentals", emoji: "📚",
+    tags: ["Data Structures", "Algorithms", "OOP", "System Design", "Code Review", "Unit Testing", "Agile"]
   }
 ];
 
 const projects = [
   {
-    id: "01", title: "Uncertainty-Aware MRI-to-CT Synthesis",
-    tags: ["PyTorch", "CBAM U-Net", "Deep Ensembles", "Medical AI"],
-    description: "MS Capstone deep learning pipeline synthesizing CT from MRI for radiotherapy. CBAM U-Net achieved 51.4 HU MAE with actionable uncertainty maps (ρ=0.7886).",
-    metric: "51.4 HU MAE", status: "RESEARCH", statusColor: "#ff6b6b",
-    link: "https://github.com/shriya-1603/uncertainty-aware-mri-ct-synthesis",
-    architecture: `MRI Input → Preprocessing → CBAM U-Net → CT Synthesis
-                                      ↓
-             MC Dropout / Deep Ensembles / TTA
-                                      ↓
-             Uncertainty Map + SPR/WET Clinical Validation`
+    id: "01", title: "RepoMind: Autonomous Engineering Intelligence Platform",
+    tags: ["TypeScript", "React", "React Flow", "Neo4j", "AST Parsing"],
+    description: "Architected a graph-based software intelligence platform capable of processing 1,000+ AST-parsed entities and 3,000+ dependency relationships. Implemented a custom TypeScript edge projection engine and interactive layout pipeline (useExplorerLayout), boosting UI rendering performance by 98%+ with sub-second rendering latency.",
+    metric: "98%+ Rendering Speedup", status: "PRODUCTION", statusColor: "var(--teal)",
+    link: "https://github.com/shriya-1603/RepoMind",
+    architecture: `Source Code → AST Parser → Entity Extraction (1,000+ nodes, 3,000+ edges)
+                                         ↓
+    TypeScript Edge Projection Engine → Neo4j Graph DB
+                                         ↓
+    React Flow UI (useExplorerLayout) with Incremental Rendering`
   },
   {
-    id: "02", title: "Production RAG Q&A System",
-    tags: ["Llama 3", "LangChain", "FAISS", "Docker"],
-    description: "End-to-end RAG pipeline with semantic chunking, persistent FAISS vector storage, and source citation. Supports PDF/DOCX uploads with local Llama 3 inference via Ollama.",
-    metric: "Local Llama 3", status: "PRODUCTION", statusColor: "#4ecdc4",
+    id: "02", title: "RAG Document Q&A: REST API with Third-Party LLM Integration",
+    tags: ["Python", "LangChain", "FAISS", "Ollama", "Llama 3"],
+    description: "Architected a fully local, privacy-preserving Retrieval-Augmented Generation (RAG) platform using Python and LangChain. Engineered an asynchronous document ingestion and serialization pipeline to parse and structure multi-format files (PDF, DOCX, TXT) into a persistent on-disk FAISS vector database layer with local Llama 3 inference via Ollama.",
+    metric: "Local Llama 3", status: "PRODUCTION", statusColor: "var(--teal)",
     link: "https://github.com/shriya-1603/rag-qa-system",
-    architecture: `PDF/DOCX Upload → Semantic Chunking → FAISS Index
-User Query → LangChain Retriever → Llama 3 (Ollama)
-                         ↓
-           Response + Source Citations`
+    architecture: `Upload (PDF/DOCX/TXT) → Asynchronous Ingestion & Parsing
+                                         ↓
+    Semantic Chunking & Embedding → Persistent FAISS Vector DB
+                                         ↓
+    User Query → LangChain Retriever → Local Llama 3 (Ollama)`
   },
   {
-    id: "03", title: "Satellite to Map Translation (cGAN)",
-    tags: ["TensorFlow", "cGAN", "FastAPI", "Flutter"],
-    description: "Bidirectional image translation using a U-Net Generator & PatchGAN Discriminator. Served via a cross-platform Flutter app with a FastAPI backend.",
-    metric: "cGAN + Full-Stack", status: "COMPLETE", statusColor: "#4ecdc4",
-    link: "https://github.com/shriya-1603/Map_Translation"
+    id: "03", title: "Uncertainty-Aware MRI-to-CT Synthesis (MS Capstone)",
+    tags: ["PyTorch", "CBAM U-Net", "Deep Ensembles", "MC Dropout"],
+    description: "Architected a multi-architecture U-Net pipeline using PyTorch to synthesize physically grounded synthetic CT scans from brain MRI volumes. Integrated a CBAM module to optimize feature re-weighting at bone-tissue interfaces (51.4 HU MAE) and engineered a voxel-wise uncertainty quantification engine via Deep Ensembles and MC Dropout.",
+    metric: "51.4 HU MAE", status: "RESEARCH", statusColor: "var(--coral)",
+    link: "https://github.com/shriya-1603/uncertainty-aware-mri-ct-synthesis",
+    architecture: `Brain MRI Input → CBAM U-Net Pipeline → Synthetic CT Scan
+                                      ↓
+    Voxel-wise Uncertainty Quantification (Deep Ensembles + MC Dropout)
+                                      ↓
+    Predicted Variance Maps vs Actual Voxel Error (ρ=0.7886 Correlation)`
   },
   {
-    id: "04", title: "Automated News Categorization",
-    tags: ["BERT", "Transformers", "NLP Research"],
-    description: "Benchmarked 6 classifiers across 4 feature methods. Fine-tuned BERT to 94.2% accuracy. Co-authored IEEE-style research report.",
-    metric: "94.2% Accuracy", status: "RESEARCH", statusColor: "#ff6b6b",
-    link: "https://github.com/shriya-1603/Automated-News-Categorizaton-Using-Deep-Learning-and-Machine-Learning"
-  },
-  {
-    id: "05", title: "Pneumonia Detection",
-    tags: ["ResNet50V2", "TensorFlow", "Transfer Learning"],
-    description: "Medical classification on 5,800+ X-rays using ResNet50V2 and VGG16. Achieved 91% accuracy with full AUC-ROC evaluation.",
-    metric: "91% Accuracy", status: "COMPLETE", statusColor: "#4ecdc4",
-    link: "https://github.com/shriya-1603/Deep-Learning-Based-Pneumonia-Detection-A-Study-of-Custom-CNN-VGG16-and-ResNet50V2"
-  },
-  {
-    id: "06", title: "Production CV Platform (8 Modules)",
-    tags: ["MediaPipe", "SAM", "Flask", "Docker"],
-    description: "Containerized REST API platform routing across 8 independent CV pipelines: SAM segmentation, pose tracking, and face authentication, with Docker and real-time monitoring.",
-    metric: "8 CV Modules", status: "PRODUCTION", statusColor: "#4ecdc4",
-    link: "https://github.com/shriya-1603/CV_consolidated"
+    id: "04", title: "Real-Time Computer Vision Platform: Distributed Backend Service",
+    tags: ["Flask", "React", "OpenCV", "Docker", "CI/CD"],
+    description: "Architected a modular full-stack web platform using Flask and OpenCV to consolidate multiple computer vision pipelines. Utilized UUID-based session isolation to handle concurrent environments safely, and engineered low-latency live-streaming feeds and manual Wiener deconvolution algorithms from scratch.",
+    metric: "Low-latency MJPEG", status: "COMPLETE", statusColor: "var(--teal)",
+    link: "https://github.com/shriya-1603/CV_consolidated",
+    architecture: `Client (React UI) → REST API Gateway (Flask Backend)
+                                         ↓
+    UUID Session Isolation → Concurrent Runtime Environments
+                                         ↓
+    OpenCV Image Pipelines (Live MJPEG Streams & Wiener Deconvolution)`
   }
 ];
 
@@ -943,15 +940,15 @@ const expressions = {
   bye:      { mouthD: "M 190 235 C 195 245 205 245 210 235", eyebrowDY: 0,  anim: "bob 3s ease-in-out infinite",            armState: "waving",      bubble: "Let's connect! 💌" },
 };
 
-const sectionExpressions = { hero: "wave", about: "thinking", skills: "serious", projects: "excited", contact: "bye" };
+const sectionExpressions = { hero: "wave", about: "thinking", experience: "thinking", skills: "serious", projects: "excited", contact: "bye" };
 
 const badges = [
+  { t: "MS Computer Science (3.99 GPA)", bg: "var(--yellow)" },
+  { t: "B.Tech AI & ML (3.7 GPA)", bg: "var(--coral)" },
+  { t: "Former Associate SWE @ Micron", bg: "var(--teal)" },
+  { t: "Graduate Research Assistant @ GSU", bg: "#ff5e62" },
   { t: "Oracle Fusion AI Agent Studio", bg: "var(--yellow)" },
-  { t: "AWS Certified Practitioner", bg: "var(--coral)" },
-  { t: "DataCamp Associate Data Scientist", bg: "var(--teal)" },
-  { t: "DSA in C/C++ (Udemy)", bg: "#ff5e62" },
-  { t: "MS Computer Science (3.99)", bg: "var(--yellow)" },
-  { t: "B.Tech AI & ML (3.7)", bg: "var(--coral)" },
+  { t: "AWS Certified Practitioner", bg: "var(--coral)" }
 ];
 
 function lerp(a, b, t) { return a + (b - a) * t; }
@@ -1027,7 +1024,7 @@ function Character({ expression, eyeOffset }) {
           <>
             <g style={{transformOrigin: "110px 340px"}}>
               <circle cx="110" cy="340" r="22" fill={sk}/>
-              <path d="M 110 340 L 60 420 L 115 455" stroke={sk} strokeWidth="24" fill="none" strokeLinecap="round" strokeJoin="round"/>
+              <path d="M 110 340 L 60 420 L 115 455" stroke={sk} strokeWidth="24" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M 115 455 Q 130 455 130 440" stroke={sk} strokeWidth="24" fill="none" strokeLinecap="round"/>
             </g>
             <g style={{transformOrigin: "290px 340px", animation: "shiver 0.2s linear infinite"}}>
@@ -1261,7 +1258,7 @@ function HeroSection({ scrollToSection }) {
           AI/ML Engineer building Agentic AI systems, LLM workflows, and production-ready ML applications.
           <span className="hero-quick-facts">
             <span>🎓 MS CS @ Georgia State (3.99 GPA)</span>
-            <span>💼 Former Micron Software Engineering Intern</span>
+            <span>💼 Former Associate SWE @ Micron</span>
             <span>🚀 Open to AI/ML &amp; SWE Roles</span>
           </span>
         </p>
@@ -1300,10 +1297,10 @@ function AboutSection() {
           <div className="dossier-body">
             {[
               {icon:"🎓",label:"Education",val:"MS Computer Science, GSU (3.99)"},
-              {icon:"📜",label:"Undergrad",val:"B.Tech CS & AI/ML, KMIT (3.7)"},
-              {icon:"💼",label:"Experience",val:"Software Engineer & ML Teaching Assistant"},
-              {icon:"🛠️",label:"Versatility",val:"Full-Stack & ML Engineering"},
-              {icon:"🚀",label:"Goal",val:"SDE / AI / ML Engineering"},
+              {icon:"📜",label:"Undergrad",val:"B.Tech CS (AI & ML), KMIT (3.7)"},
+              {icon:"💼",label:"Experience",val:"Graduate Research Assistant & Former Associate SWE"},
+              {icon:"🛠️",label:"Versatility",val:"AI/ML & Software Engineering"},
+              {icon:"🚀",label:"Goal",val:"AI/ML Engineer / SWE Roles"},
             ].map(r=>(
               <div key={r.label} className="dossier-row">
                 <span className="dossier-icon">{r.icon}</span>
@@ -1324,7 +1321,7 @@ function AboutSection() {
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.2s"}}>
             <div className="panel-num">[02] PRODUCTION-READY</div>
             <p style={{lineHeight:1.7,fontSize:14}}>
-              As a Software Engineering Intern at Micron Technology, I engineered real-time analysis modules and large-scale data pipelines used in production environments. I specialize in end-to-end systems that are not just technically advanced, but genuinely reliable, maintainable, and scalable in real-world settings.
+              As an Associate Software Engineer at Micron Technology, I engineered core backend REST APIs using ASP.NET Web API and C#, and integrated high-throughput Snowflake analytics pipelines. I specialize in end-to-end systems that are not just technically advanced, but genuinely reliable, maintainable, and scalable in real-world settings.
             </p>
           </div>
           <div className="comic-panel reveal-right" style={{transitionDelay:"0.3s"}}>
@@ -1338,6 +1335,85 @@ function AboutSection() {
     </section>
   );
 }
+
+function ExperienceSection() {
+  const experiences = [
+    {
+      company: "Georgia State University",
+      role: "Graduate Research Assistant, Software Engineering",
+      period: "Jan 2025 – May 2026",
+      location: "Atlanta, GA",
+      bullets: [
+        "Architected Project TensorStream, a centralized, event-driven data platform adopted across 6+ faculty research teams to streamline deep learning workflows and cut manual data processing efforts by 40%.",
+        "Engineered the core ingestion and serialization layers using Python, PostgreSQL, and DynamoDB, automating the structural validation and tensor normalization of 50,000+ multimodal records to feed downstream neural networks.",
+        "Developed a decoupled, asynchronous batch-processing framework using multi-threaded workers, reducing upstream data preparation latency by 35% and entirely eliminating GPU starvation during parallel model training cycles."
+      ]
+    },
+    {
+      company: "Micron Technology",
+      role: "Associate Software Engineer, Full Stack",
+      period: "Jan 2024 – Jul 2024",
+      location: "Hyderabad, India",
+      bullets: [
+        "Engineered core backend REST APIs using ASP.NET Web API and C#, architecting an automated, real-time defect analysis system that boosted factory floor anomaly identification accuracy by 25%.",
+        "Optimized enterprise database performance by restructuring MongoDB schemas and indexing strategies, slashing query execution latency by 40% and dropping critical API response times by 200ms.",
+        "Integrated high-throughput Snowflake analytics pipelines and orchestrated Docker-based microservice deployments via Azure DevOps, earning the Best Debutant Award."
+      ]
+    },
+    {
+      company: "Keshav Memorial Institute of Technology",
+      role: "R&D Software Engineering Intern",
+      period: "Jun 2023 – Dec 2023",
+      location: "Hyderabad, India",
+      bullets: [
+        "Co-developed the Legacy Digitization Engine, engineering an end-to-end computer vision and localization pipeline using Python and OpenCV to automate textual extraction and multilingual translation across 1,500+ scanned engineering schemas.",
+        "Developed an oriented-text localization layer and adaptive contrast filters to isolate non-horizontal scripts, optimizing bounding-box alignment and reducing downstream OCR parsing errors by 28%.",
+        "Architected multi-threaded batch processing components to parallelize heavy pixel matrix transformations, slashing total file execution runtime by 35% while eliminating system memory leaks."
+      ]
+    }
+  ];
+
+  return (
+    <section id="experience" style={{ padding: "80px 60px", background: "var(--cream)", borderTop: "2.5px solid var(--ink)" }}>
+      <div style={{ textAlign: "center", marginBottom: "40px" }}>
+        <h2 className="section-title">SERVICE RECORD</h2>
+        <p className="section-subtitle reveal" style={{ transitionDelay: "0.1s" }}>Professional Experience</p>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "30px", maxWidth: "900px", margin: "0 auto" }}>
+        {experiences.map((exp, idx) => (
+          <div 
+            key={exp.company} 
+            className="comic-panel reveal" 
+            style={{ 
+              transitionDelay: `${0.1 + idx * 0.1}s`,
+              border: "2.5px solid var(--ink)",
+              boxShadow: "var(--panel-shadow)",
+              padding: "24px",
+              background: "var(--panel-bg)"
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "10px", marginBottom: "12px", borderBottom: "2px solid var(--ink)", paddingBottom: "8px" }}>
+              <div>
+                <h3 style={{ fontFamily: "'Bangers', cursive", fontSize: "24px", color: "var(--ink)", letterSpacing: "1px" }}>{exp.role.toUpperCase()}</h3>
+                <h4 style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "16px", color: "var(--coral)" }}>{exp.company}</h4>
+              </div>
+              <div style={{ textAlign: "right" }}>
+                <span style={{ fontFamily: "'Nunito', sans-serif", fontWeight: "bold", fontSize: "14px", display: "block", color: "var(--text-muted)" }}>{exp.period}</span>
+                <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: "13px", display: "block", color: "var(--teal)", fontWeight: "bold" }}>📍 {exp.location}</span>
+              </div>
+            </div>
+            <ul style={{ paddingLeft: "20px", color: "var(--ink)", fontSize: "14px", lineHeight: "1.6" }}>
+              {exp.bullets.map((bullet, bIdx) => (
+                <li key={bIdx} style={{ marginBottom: "8px" }}>{bullet}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 
 function SkillsSection() {
   return (
@@ -1711,7 +1787,7 @@ export default function Portfolio() {
 
   // Section observer
   useEffect(()=>{
-    const sections = ["hero","about","skills","projects","contact"];
+    const sections = ["hero","about","experience","skills","projects","contact"];
     const obs = new IntersectionObserver(entries=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
@@ -1755,7 +1831,7 @@ export default function Portfolio() {
     setFormData({name:"",email:"",msg:""});
   },[formData]);
 
-  const navLinks = ["home","about","skills","projects","contact"];
+  const navLinks = ["home","about","experience","skills","projects","contact"];
 
   return (
     <>
@@ -1804,6 +1880,7 @@ export default function Portfolio() {
       {/* Sections */}
       <HeroSection scrollToSection={scrollToSection}/>
       <AboutSection/>
+      <ExperienceSection/>
       <SkillsSection/>
       <ProjectsSection/>
       <ContactSection formData={formData} setFormData={setFormData} handleSend={handleSend}/>
@@ -1825,6 +1902,7 @@ export default function Portfolio() {
           <div className="transition-word">
             {activeSection === "projects" ? "MISSION" : 
              activeSection === "about" ? "ORIGIN" : 
+             activeSection === "experience" ? "HISTORY" :
              activeSection === "skills" ? "POWER" : "WHOOSH!"}
           </div>
         </>
