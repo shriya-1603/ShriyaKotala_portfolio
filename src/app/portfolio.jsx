@@ -897,9 +897,10 @@ const projects = [
   {
     id: "02", title: "RAG Document Q&A: REST API with Third-Party LLM Integration",
     tags: ["Python", "LangChain", "FAISS", "Ollama", "Llama 3"],
-    description: "Architected a fully local, privacy-preserving Retrieval-Augmented Generation (RAG) platform using Python and LangChain. Engineered an asynchronous document ingestion and serialization pipeline to parse and structure multi-format files (PDF, DOCX, TXT) into a persistent on-disk FAISS vector database layer with local Llama 3 inference via Ollama.",
-    metric: "Local Llama 3", status: "PRODUCTION", statusColor: "var(--teal)",
+    description: "Engineered a configurable ingestion and retrieval pipeline using LangChain and FAISS with 1,000-token chunks, 200-token overlap, and top-k = 4 retrieval, achieving sub-2ms vector lookup latency on in-memory indices. Benchmarked cloud versus local generation backends (1.2–2.5s vs. 3.5–7.5s latency) and validated swappable 768-dim and 3072-dim embedding models to balance retrieval accuracy against memory footprint.",
+    metric: "Sub-2ms Retrieval", status: "PRODUCTION", statusColor: "var(--teal)",
     link: "https://github.com/shriya-1603/rag-qa-system",
+    demo: "https://rag-app-system.streamlit.app/",
     architecture: `Upload (PDF/DOCX/TXT) → Asynchronous Ingestion & Parsing
                                          ↓
     Semantic Chunking & Embedding → Persistent FAISS Vector DB
@@ -1480,6 +1481,9 @@ function ProjectCard({ p, i }) {
       <div className="project-tags">{p.tags.map(t=><span key={t} className="project-tag">{t}</span>)}</div>
       <div className="project-card-actions">
         <a className="project-link" href={p.link} target="_blank" rel="noreferrer">VIEW ON GITHUB →</a>
+        {p.demo && (
+          <a className="project-link" href={p.demo} target="_blank" rel="noreferrer">LIVE DEMO →</a>
+        )}
         {p.architecture && (
           <button
             className="project-link project-arch-btn"
