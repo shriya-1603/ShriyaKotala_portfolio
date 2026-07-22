@@ -936,7 +936,7 @@ const projects = [
     tags: ["Python", "Streamlit", "Transformers", "scikit-learn", "NLP"],
     description: "Engineered an end-to-end NLP system comparing 5 text representations (Bag-of-Words to fine-tuned BERT) achieving up to 94.2% classification accuracy. Developed a newspaper-themed Streamlit UI featuring a real-time BBC RSS headlines classifier and an interactive t-SNE embedding space visualization for 1,500+ articles.",
     metric: "94.2% BERT Accuracy", status: "PRODUCTION", statusColor: "var(--teal)",
-    link: "https://github.com/shriya-1603/news-embedding-explorer",
+    link: "https://github.com/shriya-1603/Automated-News-Categorizaton-Using-Deep-Learning-and-Machine-Learning",
     demo: "https://huggingface.co/spaces/shriya-1603/news-embedding-explorer",
     architecture: `News Text / RSS Feed → Preprocessing & Cleaning (NLTK)
                                          ↓
