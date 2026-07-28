@@ -1368,7 +1368,7 @@ function ExperienceSection() {
     {
       company: "Micron Technology",
       role: "Associate Software Engineer, Full Stack",
-      period: "Jan 2024 – Jul 2024",
+      period: "Jul 2023 – Jul 2024",
       location: "Hyderabad, India",
       bullets: [
         "Engineered core backend REST APIs using ASP.NET Web API and C#, architecting an automated, real-time defect analysis system that boosted factory floor anomaly identification accuracy by 25%.",
@@ -1379,7 +1379,7 @@ function ExperienceSection() {
     {
       company: "Keshav Memorial Institute of Technology",
       role: "R&D Software Engineering Intern",
-      period: "Jun 2023 – Dec 2023",
+      period: "Nov 2022 – May 2023",
       location: "Hyderabad, India",
       bullets: [
         "Co-developed the Legacy Digitization Engine, engineering an end-to-end computer vision and localization pipeline using Python and OpenCV to automate textual extraction and multilingual translation across 1,500+ scanned engineering schemas.",
